@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
 }
@@ -30,7 +30,7 @@ body {
 /* Smartphone Mockup */
 #smartphone-frame {
   width: 375px;
-  height: 812px;
+  height: min(812px, 95vh);
   background: #111;
   border-radius: 40px;
   padding: 15px;
@@ -50,6 +50,7 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   z-index: 10;
+  pointer-events: none;
 }
 
 #screen-container {
@@ -72,7 +73,6 @@ body {
   display: none;
   flex-direction: column;
   background: #fff;
-  overflow-y: auto;
 }
 
 .app-screen.active {
@@ -90,6 +90,8 @@ body {
   transition: transform 0.1s, opacity 0.2s;
   width: 100%;
   margin-bottom: 10px;
+  position: relative;
+  z-index: 20;
 }
 
 .ui-btn:active {
@@ -122,6 +124,8 @@ body {
   background: linear-gradient(135deg, #1877f2, #00c6ff);
   color: white;
   text-align: center;
+  position: relative;
+  z-index: 15;
 }
 
 .title-content h1 {
@@ -155,12 +159,13 @@ body {
 .back-btn { color: var(--primary); cursor: pointer; }
 
 .message-area {
-  flex-grow: 1;
-  padding: 20px;
+  flex: 1 1 0;
+  min-height: 0;
+  padding: 15px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  background: #e5ddd5; /* Standard chat background */
+  background: #e5ddd5;
 }
 
 .image-container {
@@ -235,12 +240,15 @@ body {
 }
 
 .choices-area {
-  padding: 15px 20px 25px 20px;
+  flex: 0 0 auto;
+  padding: 10px 15px 15px 15px;
   background: #fff;
   border-top: 1px solid #ddd;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  max-height: 45vh;
+  overflow-y: auto;
 }
 
 .choice-btn {
@@ -248,12 +256,13 @@ body {
   color: white;
   border: none;
   border-radius: 20px;
-  padding: 12px 15px;
-  font-size: 0.9rem;
+  padding: 10px 14px;
+  font-size: 0.85rem;
   text-align: center;
   cursor: pointer;
   transition: background 0.2s;
   animation: popIn 0.3s ease forwards;
+  flex-shrink: 0;
 }
 
 .choice-btn:hover {
@@ -313,9 +322,6 @@ body {
 
 /* Make it full screen on small devices */
 @media (max-width: 500px) {
-  body {
-    overflow: auto;
-  }
   #smartphone-frame {
     width: 100vw;
     height: 100vh;
@@ -330,12 +336,22 @@ body {
   #screen-container {
     border-radius: 0;
   }
-  .choice-btn {
-    padding: 10px 12px;
-    font-size: 0.85rem;
+  .chat-header {
+    height: 50px;
+    padding: 0 10px;
   }
-  .choices-area {
-    padding: 10px 15px 15px 15px;
-    gap: 8px;
+  .message-area {
+    padding: 10px;
+  }
+  .message-bubble {
+    font-size: 0.85rem;
+    padding: 10px 14px;
+  }
+  .choice-btn {
+    padding: 9px 12px;
+    font-size: 0.8rem;
+  }
+  #scene-image {
+    max-height: 150px;
   }
 }

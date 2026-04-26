@@ -10,7 +10,7 @@ const scenarios = {
   },
   scene1: {
     text: "友達の「ボクバナナ」が、有名なアーティストの曲を勝手に使って文化祭の宣伝動画を作り、SNSにアップしようとしている！\\n『これ絶対バズるニャ！』と言っているが...",
-    image: "file:///C:/Users/ryuto/.gemini/antigravity/brain/f90357b8-79ae-45cf-be1d-1a4f2a020646/scenario_copyright_nanobanana_1777189994186.png",
+    image: "./scenario_copyright.png",
     speaker: "ボクバナナ",
     trustChange: 0,
     choices: [
@@ -49,7 +49,7 @@ const scenarios = {
   },
   scene2: {
     text: "著作権の危険性を伝えると、ボクバナナはフリー音源（クリエイティブ・コモンズ BY）を使って動画を完成させた。\\n次の日、街を歩いていると、超有名な芸能人「スター・バナナ」がプライベートで歩いているのを発見した！",
-    image: "file:///C:/Users/ryuto/.gemini/antigravity/brain/f90357b8-79ae-45cf-be1d-1a4f2a020646/scenario_portrait_nanobanana_1777190008792.png",
+    image: "./scenario_portrait.png",
     speaker: "システム",
     trustChange: 0,
     choices: [
@@ -81,7 +81,7 @@ const scenarios = {
     image: null,
     speaker: "メッセージアプリ",
     trustChange: 0,
-    timeLimit: 5, // 5 seconds to decide
+    timeLimit: 5,
     timeoutNextId: "bad_timeout",
     choices: [
       { text: "急いでURLをタップしてログインする", nextId: "bad_phishing" },
@@ -108,7 +108,7 @@ const scenarios = {
   },
   scene4: {
     text: "公式アプリから確認すると、不正アクセスの形跡はなかった。フィッシング詐欺を回避した！\\nしかし安心したのもつかの間、自分のSNSを見ると、数年前に撮られた自分の『超恥ずかしい変顔写真』が勝手に誰かに投稿されているのを発見した！",
-    image: "file:///C:/Users/ryuto/.gemini/antigravity/brain/f90357b8-79ae-45cf-be1d-1a4f2a020646/scenario_privacy_nanobanana_1777190020901.png",
+    image: "./scenario_privacy.png",
     speaker: "システム",
     trustChange: 10,
     choices: [

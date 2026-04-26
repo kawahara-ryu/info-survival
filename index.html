@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情報社会サバイバル</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="smartphone-frame">
+        <div id="screen-container">
+            <!-- Title Screen -->
+            <div id="title-screen" class="app-screen active">
+                <div class="title-content">
+                    <h1>情報社会<br><span style="color: #ff003c;">サバイバル</span></h1>
+                    <p class="subtitle">日常に潜む罠を回避せよ！</p>
+                    <button id="start-btn" class="ui-btn primary-btn">START SURVIVAL</button>
+                </div>
+            </div>
+
+            <!-- Game Screen -->
+            <div id="game-screen" class="app-screen">
+                <div class="chat-header">
+                    <span class="back-btn" id="header-back">◀</span>
+                    <div style="display: flex; flex-direction: column; align-items: center; flex-grow: 1; padding: 0 10px;">
+                        <span id="speaker-name" style="font-size: 0.9rem;">システム</span>
+                        <div style="width: 100%; height: 6px; background: #ddd; border-radius: 3px; margin-top: 2px;">
+                            <div id="trust-bar" style="width: 100%; height: 100%; background: #42b72a; border-radius: 3px; transition: width 0.3s, background-color 0.3s;"></div>
+                        </div>
+                    </div>
+                    <span class="info-icon" style="font-size: 1.2rem;">📶</span>
+                </div>
+                
+                <div id="message-area" class="message-area">
+                    <div id="image-container" class="image-container hidden">
+                        <img id="scene-image" src="" alt="scene image">
+                    </div>
+                    
+                    <div id="typing-indicator" class="message-bubble received hidden" style="width: 60px;">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+
+                    <div id="text-bubble" class="message-bubble received hidden">
+                        <p id="scenario-text">シナリオテキストがここに入ります。</p>
+                    </div>
+                </div>
+
+                <div id="choices-area" class="choices-area hidden">
+                    <div id="timer-container" class="hidden" style="width: 100%; height: 4px; background: #eee; margin-bottom: 10px; border-radius: 2px; overflow: hidden;">
+                        <div id="timer-bar" style="width: 100%; height: 100%; background: #ff003c; transition: width 0.1s linear;"></div>
+                    </div>
+                    <div id="choices-list" style="display: flex; flex-direction: column; gap: 10px;"></div>
+                </div>
+            </div>
+
+            <!-- Clear Screen -->
+            <div id="clear-screen" class="app-screen">
+                <div class="clear-content">
+                    <h1 style="color: #00f0ff;">MISSION CLEARED</h1>
+                    <p>情報社会の荒波を見事サバイブした！</p>
+                    
+                    <div class="password-box">
+                        <p>Google Classroomの解答に以下の「あいことば」を入力してください。</p>
+                        <h2 id="secret-word">「忘れられる権利」を発動して消えた宿題</h2>
+                    </div>
+
+                    <button id="home-btn" class="ui-btn secondary-btn">タイトルへ戻る</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="scenarios.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
